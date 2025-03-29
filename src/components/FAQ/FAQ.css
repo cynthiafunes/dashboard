@@ -1,0 +1,38 @@
+.faq-section {
+    margin-top: 20px;
+  }
+  
+  .faq-header {
+    font-size: 18px;
+    color: var(--text-primary);
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+  
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  
+  .view-all-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .view-all-btn {
+    background-color: var(--bitcoin-orange);
+    color: white;
+    font-weight: bold;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .view-all-btn:hover {
+    background-color: #e58113;
+  }

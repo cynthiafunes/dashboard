@@ -1,0 +1,114 @@
+.power-law-explainer {
+    margin-top: 20px;
+    padding: 25px;
+  }
+  
+  .explainer-title {
+    font-size: 20px;
+    color: var(--bitcoin-orange);
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+  
+  .explainer-content {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--text-primary);
+  }
+  
+  .explainer-content p {
+    margin-bottom: 15px;
+  }
+  
+  .key-points {
+    background-color: rgba(42, 58, 90, 0.5);
+    border-radius: 8px;
+    padding: 15px 20px;
+    margin: 20px 0;
+  }
+  
+  .key-points h3 {
+    font-size: 16px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: var(--text-primary);
+  }
+  
+  .key-points ul {
+    padding-left: 20px;
+    margin: 0;
+  }
+  
+  .key-points li {
+    margin-bottom: 10px;
+  }
+  
+  .key-points li:last-child {
+    margin-bottom: 0;
+  }
+  
+  .example-btn {
+    background-color: var(--panel-bg);
+    border: none;
+    border-radius: 6px;
+    padding: 10px 20px;
+    color: var(--text-primary);
+    cursor: pointer;
+    font-size: 14px;
+    margin: 15px 0;
+    transition: all 0.2s;
+  }
+  
+  .example-btn:hover {
+    background-color: var(--bitcoin-orange);
+  }
+  
+  .example-container {
+    background-color: rgba(247, 147, 26, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+    margin: 15px 0 25px;
+    border-left: 3px solid var(--bitcoin-orange);
+  }
+  
+  .example-container h3 {
+    font-size: 16px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: var(--bitcoin-orange);
+  }
+  
+  .example-chart {
+    margin-top: 15px;
+    background-color: rgba(26, 34, 53, 0.7);
+    border-radius: 6px;
+    padding: 10px;
+  }
+  
+  .chart-note {
+    font-size: 12px;
+    color: var(--text-secondary);
+    font-style: italic;
+    text-align: center;
+    margin-top: 5px;
+  }
+  
+  .real-world-application {
+    margin-top: 25px;
+  }
+  
+  .real-world-application h3 {
+    font-size: 16px;
+    color: var(--text-primary);
+    margin-bottom: 10px;
+  }
+  
+  @media (max-width: 768px) {
+    .power-law-explainer {
+      padding: 15px;
+    }
+    
+    .example-chart {
+      height: 200px;
+    }
+  }

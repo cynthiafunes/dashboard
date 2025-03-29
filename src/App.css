@@ -1,38 +1,107 @@
-.App {
-  text-align: center;
+/* Global styles */
+:root {
+  --primary-bg: #0f1623;
+  --secondary-bg: #1a2235;
+  --panel-bg: #2a3a5a;
+  --bitcoin-orange: #f7931a;
+  --bitcoin-blue: #3498db;
+  --text-primary: #ffffff;
+  --text-secondary: #8899aa;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  background-color: var(--primary-bg);
+  color: var(--text-primary);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.app {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.main-content {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.panel {
+  background-color: var(--secondary-bg);
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.panel-header {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+button {
+  background-color: var(--panel-bg);
+  border: none;
+  border-radius: 5px;
+  color: var(--text-primary);
+  padding: 8px 16px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: var(--bitcoin-orange);
+}
+
+button.primary {
+  background-color: var(--bitcoin-orange);
+}
+
+button.primary:hover {
+  background-color: #e58113;
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    padding: 10px;
   }
-  to {
-    transform: rotate(360deg);
-  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Add these lines to the existing App.css file */
+
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Add some extra padding at the bottom of the page for scrolling */
+.app {
+  padding-bottom: 30px;
+}
+
+/* Improve focus states for accessibility */
+button:focus, a:focus {
+  outline: 2px solid var(--bitcoin-orange);
+  outline-offset: 2px;
+}
+
+/* Smooth transitions */
+.panel, button {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Improve button hover states */
+button:hover {
+  transform: translateY(-1px);
 }
