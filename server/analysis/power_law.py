@@ -4,6 +4,11 @@ import requests
 from datetime import datetime
 import time
 from sklearn.linear_model import LinearRegression
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+key=os.getenv("key")
 
 def get_bitcoin_price_data():
     """
@@ -11,17 +16,17 @@ def get_bitcoin_price_data():
     Returns data in format suitable for our dashboard
     """
     # CoinGecko API endpoint for Bitcoin historical data
-    url = "https://api.coingecko.com/api/v3/coins/bitcoin/market_chart"
+    url = f"https://api.coingecko.com/api/v3/coins/bitcoin/market_chart/range?vs_currency=usd&from=1711670400&to=1743206400&x_cg_demo_api_key={key}"
     
     # Get data from 2010 to present
-    params = {
-        'vs_currency': 'usd',
-        'days': 'max',
-        'interval': 'daily'
-    }
+    # params = {
+    #     'vs_currency': 'usd',
+    #     'days': 'max',
+    #     'interval': 'daily'
+    # }
     
     # Make API request
-    response = requests.get(url, params=params)
+    response = requests.get(url)
     if response.status_code != 200:
         raise Exception(f"API request failed with status code {response.status_code}")
     
