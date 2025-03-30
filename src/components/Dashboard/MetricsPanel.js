@@ -69,14 +69,11 @@ const MetricsPanel = () => {
       </div>
 
       <div className="metric-card">
-        <h3>Understanding Power Law</h3>
+        <h3>What is Bitcoin Power Law?</h3>
         <p className="power-law-text">
-          The power law suggests that Bitcoin's price may follow a predictable pattern of growth over extended periods of time.
+        The power law aims to project the price of Bitcoin based on the following assumption: Bitcoin's price, users, and mining power 
+        increase in a predictable way, like a city growing, where each part influences the others in a continuous feedback loop.
         </p>
-        <div className="interactive-demo">
-          <span className="demo-icon">•</span>
-          <span>Click to see interactive demo</span>
-        </div>
       </div>
     </div>
   );

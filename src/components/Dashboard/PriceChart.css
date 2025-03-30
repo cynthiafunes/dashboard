@@ -47,7 +47,6 @@
   background-color: var(--bitcoin-blue);
 }
 
-/* Special styling for forecast button when active */
 .control-btn.active:nth-child(3) {
   background-color: #2ecc71;
 }
@@ -84,7 +83,6 @@
   font-size: 13px;
 }
 
-/* Add to the existing PriceChart.css file */
 .loading-indicator {
   display: flex;
   justify-content: center;
@@ -102,7 +100,6 @@
   margin: 5px 0;
 }
 
-/* Forecast specific styles */
 .forecast-info {
   margin-top: 15px;
 }

@@ -3,7 +3,6 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Responsi
 import './PriceChart.css';
 import { getBitcoinPriceData } from '../../api/bitcoinData';
 
-// Custom tooltip component for better styling
 const CustomTooltip = ({ active, payload, label }) => {
   if (active && payload && payload.length) {
     return (

@@ -2,7 +2,6 @@ import React from 'react';
 import './FAQItem.css';
 
 const FAQItem = ({ faq, isExpanded, onToggle }) => {
-  // For the bitcoin terms FAQ
   if (faq.id === 5) {
     return (
       <div className={`faq-item ${isExpanded ? 'expanded' : ''}`}>
@@ -63,7 +62,6 @@ const FAQItem = ({ faq, isExpanded, onToggle }) => {
     );
   }
   
-  // For all other FAQs
   return (
     <div className={`faq-item ${isExpanded ? 'expanded' : ''}`}>
       <div className="faq-question" onClick={onToggle}>

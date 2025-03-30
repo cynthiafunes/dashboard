@@ -10,7 +10,6 @@ CORS(app)
 @app.route('/api/bitcoin/price-data', methods=['GET'])
 def get_bitcoin_data():
     try:
-        # Get historical bitcoin price data
         price_data = get_bitcoin_price_data()
         
         # Calculate power law projection
@@ -74,7 +73,6 @@ def get_bitcoin_metrics():
             }
         })
     except Exception as e:
-        # Fallback to default values if API fails
         return jsonify({
             'success': True,
             'data': {

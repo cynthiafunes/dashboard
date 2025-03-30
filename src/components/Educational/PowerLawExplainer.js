@@ -5,7 +5,6 @@ import './PowerLawExplainer.css';
 const PowerLawExplainer = () => {
   const [showExample, setShowExample] = useState(false);
   
-  // Simplified data for educational purposes
   const powerLawData = [
     { year: 2010, value: 1 },
     { year: 2012, value: 10 },
@@ -22,8 +21,10 @@ const PowerLawExplainer = () => {
       
       <div className="explainer-content">
         <p>
-          The Power Law is a mathematical concept that describes relationships where one quantity varies as a power of another. 
-          In Bitcoin's case, some analysts suggest its price growth may follow a power law pattern over long time periods.
+        The Bitcoin Power Law Chart is a long-term price model that suggests Bitcoin’s price follows a power law function over time. 
+        Unlike traditional stock market models that assume linear or exponential growth, the power law model suggests that Bitcoin’s 
+        price scales in a predictable, non-random way over the long run. This model indicates that Bitcoin’s price movements are not 
+        purely speculative or random, but instead follow a structured mathematical pattern based on time.
         </p>
         
         <div className="key-points">

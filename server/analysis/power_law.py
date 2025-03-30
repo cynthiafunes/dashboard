@@ -13,7 +13,6 @@ def get_bitcoin_price_data():
         'format': 'json'
     }
     
-    # Make API request
     response = requests.get(url, params=params)
     if response.status_code != 200:
         raise Exception(f"API request failed with status code {response.status_code}")
@@ -74,7 +73,6 @@ def calculate_power_law(price_data):
     prices = prices[valid_indices]
     
     if len(years) < 2:
-        # Not enough valid data points after filtering
         return []
     
     # The base year is calculated as one year before the earliest data point
@@ -94,7 +92,7 @@ def calculate_power_law(price_data):
     beta = np.exp(model.intercept_)
     
     # Generate power law projections including future years
-    all_years = list(range(int(min(years)), 2026))  # Project up to 2030
+    all_years = list(range(int(min(years)), 2026)) 
     
     result = []
     

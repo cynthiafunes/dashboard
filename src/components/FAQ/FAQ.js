@@ -78,9 +78,6 @@ Mempool: The waiting area where transactions sit before being confirmed in a blo
           />
         ))}
       </div>
-      <div className="view-all-container">
-        <button className="view-all-btn primary">View All FAQs</button>
-      </div>
     </div>
   );
 };

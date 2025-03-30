@@ -1,7 +1,7 @@
 .dashboard {
   display: flex;
   flex-direction: column;
-  gap: 50px; /* Increased gap for clear separation between dashboard sections */
+  gap: 50px;
 }
 
 .dashboard-grid {
@@ -17,8 +17,8 @@
   padding: 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   height: 100%;
-  position: relative; /* Added to ensure proper positioning */
-  overflow: hidden; /* Prevents content from breaking outside */
+  position: relative;
+  overflow: hidden;
 }
 
 .main-chart {

@@ -28,7 +28,7 @@ body {
   padding: 20px;
   display: flex;
   flex-direction: column;
-  gap: 50px; /* Increased gap for clear separation between sections */
+  gap: 50px;
 }
 
 .panel {
@@ -68,11 +68,10 @@ button.primary:hover {
   background-color: #e58113;
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
   .main-content {
     padding: 10px;
-    gap: 30px; /* Still maintain good separation on mobile */
+    gap: 30px;
   }
 }
 
@@ -80,25 +79,21 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Accessibility improvements */
 body, html {
   height: 100%;
   margin: 0;
   padding: 0;
 }
 
-/* Add some extra padding at the bottom of the page for scrolling */
 .app {
   padding-bottom: 30px;
 }
 
-/* Improve focus states for accessibility */
 button:focus, a:focus {
   outline: 2px solid var(--bitcoin-orange);
   outline-offset: 2px;
 }
 
-/* Section spacing to prevent overlaps */
 .power-law-explainer, .faq-section {
   margin-top: 20px;
 }
