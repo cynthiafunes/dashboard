@@ -28,7 +28,7 @@ body {
   padding: 20px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 50px; /* Increased gap for clear separation between sections */
 }
 
 .panel {
@@ -52,11 +52,12 @@ button {
   padding: 8px 16px;
   cursor: pointer;
   font-size: 14px;
-  transition: background-color 0.2s;
+  transition: all 0.2s;
 }
 
 button:hover {
   background-color: var(--bitcoin-orange);
+  transform: translateY(-1px);
 }
 
 button.primary {
@@ -67,9 +68,11 @@ button.primary:hover {
   background-color: #e58113;
 }
 
+/* Responsive adjustments */
 @media (max-width: 768px) {
   .main-content {
     padding: 10px;
+    gap: 30px; /* Still maintain good separation on mobile */
   }
 }
 
@@ -77,8 +80,7 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Add these lines to the existing App.css file */
-
+/* Accessibility improvements */
 body, html {
   height: 100%;
   margin: 0;
@@ -96,12 +98,7 @@ button:focus, a:focus {
   outline-offset: 2px;
 }
 
-/* Smooth transitions */
-.panel, button {
-  transition: all 0.2s ease-in-out;
-}
-
-/* Improve button hover states */
-button:hover {
-  transform: translateY(-1px);
+/* Section spacing to prevent overlaps */
+.power-law-explainer, .faq-section {
+  margin-top: 20px;
 }

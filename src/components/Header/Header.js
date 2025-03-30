@@ -1,13 +1,13 @@
 import React from 'react';
 import './Header.css';
 
-const Header = ({ activeTab, setActiveTab }) => {
-  const tabs = [
-    { id: 'basics', label: 'Basics' },
-    { id: 'value', label: 'Value' },
-    { id: 'security', label: 'Security' },
-    { id: 'more', label: 'More' }
-  ];
+const Header = () => {
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <header className="header">
@@ -16,17 +16,25 @@ const Header = ({ activeTab, setActiveTab }) => {
         <h1>Bitcoin Power Law Explorer</h1>
       </div>
       <nav className="nav-tabs">
-        {tabs.map(tab => (
-          <button
-            key={tab.id}
-            className={`nav-tab ${activeTab === tab.id ? 'active' : ''}`}
-            onClick={() => setActiveTab(tab.id)}
-          >
-            {tab.label}
-          </button>
-        ))}
+        <button
+          className="nav-tab active"
+          onClick={() => scrollToSection('dashboard-section')}
+        >
+          Dashboard
+        </button>
+        <button
+          className="nav-tab"
+          onClick={() => scrollToSection('power-law-section')}
+        >
+          Power Law
+        </button>
+        <button
+          className="nav-tab"
+          onClick={() => scrollToSection('faq-section')}
+        >
+          FAQ
+        </button>
       </nav>
-      <button className="get-started-btn">Get Started</button>
     </header>
   );
 };

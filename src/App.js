@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './App.css';
 import Header from './components/Header/Header';
 import Dashboard from './components/Dashboard/Dashboard';
@@ -7,13 +7,11 @@ import PowerLawExplainer from './components/Educational/PowerLawExplainer';
 import BackToTop from './components/UI/BackToTop';
 
 function App() {
-  const [activeTab, setActiveTab] = useState('basics');
-
   return (
     <div className="app">
-      <Header activeTab={activeTab} setActiveTab={setActiveTab} />
+      <Header />
       <div className="main-content">
-        <Dashboard activeTab={activeTab} />
+        <Dashboard />
         <PowerLawExplainer />
         <FAQ />
       </div>

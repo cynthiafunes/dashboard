@@ -1,70 +1,85 @@
 .bitcoin-info {
-    background-color: var(--secondary-bg);
-    border-radius: 8px;
-    padding: 20px;
-    height: 100%;
-  }
-  
-  .bitcoin-info h2 {
-    margin-top: 0;
-    font-size: 18px;
-    color: var(--text-primary);
-    margin-bottom: 16px;
-  }
-  
+  background-color: var(--secondary-bg);
+  border-radius: 8px;
+  padding: 20px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* Prevents content from breaking the container */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.bitcoin-info h2 {
+  margin-top: 0;
+  font-size: 18px;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+}
+
+.info-content {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start; /* Changed from center to fix vertical alignment */
+  flex: 1;
+}
+
+.bitcoin-logo {
+  font-size: 40px;
+  color: var(--bitcoin-orange);
+  background-color: rgba(247, 147, 26, 0.1);
+  height: 70px;
+  width: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.info-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.info-text p {
+  color: var(--text-primary);
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+.learn-more-btn {
+  background-color: var(--panel-bg);
+  color: var(--text-primary);
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 10px;
+  transition: background-color 0.2s;
+  align-self: flex-start; /* Aligns button properly */
+  width: fit-content; /* Makes button only as wide as its content */
+}
+
+.learn-more-btn:hover {
+  background-color: var(--bitcoin-orange);
+}
+
+/* Ensure the container has a proper bottom */
+.side-panel {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
   .info-content {
-    display: flex;
-    gap: 20px;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
   }
   
   .bitcoin-logo {
-    font-size: 40px;
-    color: var(--bitcoin-orange);
-    background-color: rgba(247, 147, 26, 0.1);
-    height: 70px;
-    width: 70px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    flex-shrink: 0;
+    margin-bottom: 15px;
   }
-  
-  .info-text {
-    flex: 1;
-  }
-  
-  .info-text p {
-    color: var(--text-primary);
-    font-size: 14px;
-    line-height: 1.5;
-    margin-bottom: 12px;
-  }
-  
-  .learn-more-btn {
-    background-color: var(--panel-bg);
-    color: var(--text-primary);
-    border: none;
-    border-radius: 6px;
-    padding: 8px 16px;
-    cursor: pointer;
-    font-size: 14px;
-    margin-top: 10px;
-    transition: background-color 0.2s;
-  }
-  
-  .learn-more-btn:hover {
-    background-color: var(--bitcoin-orange);
-  }
-  
-  @media (max-width: 768px) {
-    .info-content {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-    
-    .bitcoin-logo {
-      margin-bottom: 15px;
-    }
-  }
+}

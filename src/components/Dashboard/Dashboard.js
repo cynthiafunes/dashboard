@@ -4,9 +4,10 @@ import PriceChart from './PriceChart';
 import BitcoinInfo from './BitcoinInfo';
 import MetricsPanel from './MetricsPanel';
 
-const Dashboard = ({ activeTab }) => {
+const Dashboard = () => {
   return (
     <div className="dashboard">
+      {/* First section: Main chart and Bitcoin info */}
       <div className="dashboard-grid">
         <div className="main-chart">
           <PriceChart />
@@ -15,7 +16,11 @@ const Dashboard = ({ activeTab }) => {
           <BitcoinInfo />
         </div>
       </div>
-      <MetricsPanel />
+      
+      {/* Second section: Metrics clearly separated */}
+      <div className="metrics-section">
+        <MetricsPanel />
+      </div>
     </div>
   );
 };

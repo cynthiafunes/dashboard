@@ -6,14 +6,8 @@ import time
 from sklearn.linear_model import LinearRegression
 
 def get_bitcoin_price_data():
-    """
-    Fetch historical Bitcoin price data from CoinGecko API
-    Returns data in format suitable for our dashboard
-    """
-    # Blockchain.info API endpoint for Bitcoin historical data
     url = "https://api.blockchain.info/charts/market-price"
     
-    # Get data from blockchain.info
     params = {
         'timespan': 'all',
         'format': 'json'

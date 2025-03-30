@@ -17,7 +17,7 @@ const PowerLawExplainer = () => {
   ];
 
   return (
-    <div className="power-law-explainer panel">
+    <div id="power-law-section" className="power-law-explainer panel">
       <h2 className="explainer-title">Understanding the Bitcoin Power Law</h2>
       
       <div className="explainer-content">

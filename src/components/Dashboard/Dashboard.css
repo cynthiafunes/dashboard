@@ -1,35 +1,84 @@
 .dashboard {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px; /* Increased gap for clear separation between dashboard sections */
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 15px;
+  min-height: 400px;
+}
+
+.main-chart, .side-panel {
+  background-color: var(--secondary-bg);
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  height: 100%;
+  position: relative; /* Added to ensure proper positioning */
+  overflow: hidden; /* Prevents content from breaking outside */
+}
+
+.main-chart {
+  display: flex;
+  flex-direction: column;
+}
+
+.side-panel {
+  display: flex;
+  flex-direction: column;
+}
+
+.metrics-section {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+  clear: both;
+}
+
+.metrics-panel {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.metric-card {
+  background-color: var(--secondary-bg);
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  height: auto;
+  min-height: 120px;
+}
+
+@media (max-width: 1200px) {
+  .metrics-panel {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 992px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
   }
   
-  .dashboard-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 20px;
-    min-height: 400px;
+  .metrics-panel {
+    grid-template-columns: repeat(2, 1fr);
   }
   
   .main-chart, .side-panel {
-    background-color: var(--secondary-bg);
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    min-height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard {
+    gap: 30px;
   }
   
-  .main-chart {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
+  .metrics-panel {
+    grid-template-columns: 1fr;
   }
-  
-  @media (max-width: 992px) {
-    .dashboard-grid {
-      grid-template-columns: 1fr;
-    }
-    
-    .main-chart, .side-panel {
-      min-height: auto;
-    }
-  }
+}

@@ -9,13 +9,12 @@ const BitcoinInfo = () => {
         <div className="bitcoin-logo">₿</div>
         <div className="info-text">
           <p>
-            Bitcoin is a decentralized digital currency that operates without
-            a central authority. It uses blockchain technology to record
-            all transactions permanently.
+          Bitcoin is an electronic payment system that allows anyone to create an account and send any amount of money to anyone in the world.
+          It was created as an alternative to the current financial system. 
           </p>
           <p>
-            Created in 2009 by an unknown person or group using the name Satoshi Nakamoto,
-            Bitcoin introduced a revolutionary way to transfer value without intermediaries.
+          In the current system we have a small number of large banks that control who can create an account and what transactions you can make. 
+          This centralizes the control of money, and we have no other option but to trust these banks to act fairly and responsibly.
           </p>
           <button className="learn-more-btn">Learn More →</button>
         </div>

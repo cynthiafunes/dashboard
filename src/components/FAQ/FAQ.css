@@ -1,38 +1,108 @@
 .faq-section {
-    margin-top: 20px;
-  }
-  
-  .faq-header {
-    font-size: 18px;
-    color: var(--text-primary);
-    margin-top: 0;
-    margin-bottom: 20px;
-  }
-  
-  .faq-list {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    margin-bottom: 20px;
-  }
-  
-  .view-all-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-  }
-  
-  .view-all-btn {
-    background-color: var(--bitcoin-orange);
-    color: white;
-    font-weight: bold;
-    padding: 10px 25px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background-color 0.2s;
-  }
-  
-  .view-all-btn:hover {
-    background-color: #e58113;
-  }
+  margin-top: 20px;
+}
+
+.faq-header {
+  font-size: 22px;
+  color: var(--text-primary);
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.faq-item {
+  background-color: var(--secondary-bg);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border-left: 3px solid var(--bitcoin-orange);
+}
+
+.faq-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.faq-question {
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+.faq-question h3 {
+  margin: 0;
+  font-size: 16px;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.expand-icon {
+  font-size: 20px;
+  color: var(--bitcoin-orange);
+  font-weight: bold;
+  transition: transform 0.3s ease;
+}
+
+.faq-item.expanded .expand-icon {
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  padding: 0 20px 20px;
+  color: var(--text-secondary);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.faq-answer p {
+  margin-top: 10px;
+  margin-bottom: 15px;
+  color: var(--text-primary);
+  opacity: 0.9;
+}
+
+/* Bitcoin terms styling */
+.term {
+  font-weight: 600;
+  color: var(--bitcoin-orange);
+  margin-bottom: 4px;
+  display: block;
+}
+
+.definition {
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.definition:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.view-all-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+}
+
+.view-all-btn {
+  background-color: var(--bitcoin-orange);
+  color: white;
+  font-weight: 600;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
