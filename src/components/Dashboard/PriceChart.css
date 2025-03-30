@@ -1,100 +1,129 @@
 .price-chart-container {
-    width: 100%;
+  width: 100%;
+}
+
+.chart-header {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.chart-header h2 {
+  margin: 0;
+  font-size: 18px;
+  color: var(--text-primary);
+}
+
+.chart-controls {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.toggle-controls, .time-range-controls, .forecast-controls, .right-controls {
+  display: flex;
+  gap: 10px;
+}
+
+.right-controls {
+  display: flex;
+  gap: 15px;
+}
+
+.control-btn, .time-btn {
+  background-color: var(--panel-bg);
+  border: none;
+  border-radius: 4px;
+  padding: 6px 12px;
+  color: var(--text-primary);
+  cursor: pointer;
+  font-size: 12px;
+  transition: all 0.2s;
+}
+
+.control-btn.active, .time-btn.active {
+  background-color: var(--bitcoin-blue);
+}
+
+/* Special styling for forecast button when active */
+.control-btn.active:nth-child(3) {
+  background-color: #2ecc71;
+}
+
+.time-btn.active {
+  background-color: var(--bitcoin-blue);
+}
+
+.chart-container {
+  background-color: rgba(42, 58, 90, 0.3);
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.custom-tooltip {
+  background-color: var(--secondary-bg);
+  border: 1px solid var(--panel-bg);
+  border-radius: 4px;
+  padding: 8px 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.tooltip-year {
+  margin: 0 0 6px 0;
+  font-weight: bold;
+  color: var(--text-primary);
+  font-size: 14px;
+  border-bottom: 1px solid var(--panel-bg);
+  padding-bottom: 4px;
+}
+
+.custom-tooltip p {
+  margin: 4px 0;
+  font-size: 13px;
+}
+
+/* Add to the existing PriceChart.css file */
+.loading-indicator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  color: var(--text-primary);
+  font-size: 16px;
+  background-color: rgba(42, 58, 90, 0.3);
+  border-radius: 8px;
+}
+
+.error-message {
+  color: #e67e22;
+  font-size: 14px;
+  margin: 5px 0;
+}
+
+/* Forecast specific styles */
+.forecast-info {
+  margin-top: 15px;
+}
+
+.forecast-disclaimer {
+  background-color: rgba(46, 204, 113, 0.1);
+  border-left: 3px solid #2ecc71;
+  padding: 10px 15px;
+  border-radius: 4px;
+  color: var(--text-secondary);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .chart-controls {
+    flex-direction: column;
   }
   
-  .chart-header {
-    display: flex;
+  .right-controls {
     flex-direction: column;
     gap: 10px;
-    margin-bottom: 15px;
   }
-  
-  .chart-header h2 {
-    margin: 0;
-    font-size: 18px;
-    color: var(--text-primary);
-  }
-  
-  .chart-controls {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-  
-  .toggle-controls, .time-range-controls {
-    display: flex;
-    gap: 10px;
-  }
-  
-  .control-btn, .time-btn {
-    background-color: var(--panel-bg);
-    border: none;
-    border-radius: 4px;
-    padding: 6px 12px;
-    color: var(--text-primary);
-    cursor: pointer;
-    font-size: 12px;
-    transition: all 0.2s;
-  }
-  
-  .control-btn.active, .time-btn.active {
-    background-color: var(--bitcoin-blue);
-  }
-  
-  .time-btn.active {
-    background-color: var(--bitcoin-blue);
-  }
-  
-  .chart-container {
-    background-color: rgba(42, 58, 90, 0.3);
-    border-radius: 8px;
-    padding: 16px;
-  }
-  
-  .custom-tooltip {
-    background-color: var(--secondary-bg);
-    border: 1px solid var(--panel-bg);
-    border-radius: 4px;
-    padding: 8px 12px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-  }
-  
-  .tooltip-year {
-    margin: 0 0 6px 0;
-    font-weight: bold;
-    color: var(--text-primary);
-    font-size: 14px;
-    border-bottom: 1px solid var(--panel-bg);
-    padding-bottom: 4px;
-  }
-  
-  .custom-tooltip p {
-    margin: 4px 0;
-    font-size: 13px;
-  }
-  
-  /* Add to the existing PriceChart.css file */
-.loading-indicator {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 300px;
-    color: var(--text-primary);
-    font-size: 16px;
-    background-color: rgba(42, 58, 90, 0.3);
-    border-radius: 8px;
-  }
-  
-  .error-message {
-    color: #e67e22;
-    font-size: 14px;
-    margin: 5px 0;
-  }
-  
-  @media (max-width: 768px) {
-    .chart-controls {
-      flex-direction: column;
-    }
-  }
-
+}
