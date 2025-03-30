@@ -68,3 +68,68 @@
       margin-bottom: 15px;
     }
   }
+
+  .bitcoin-info {
+    background-color: var(--secondary-bg);
+    border-radius: 8px;
+    padding: 20px;
+    height: 100%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+  }
+  
+  .info-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+  
+  .bitcoin-logo {
+    font-size: 28px;
+    background-color: rgba(247, 147, 26, 0.1);
+    height: 50px;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin-right: 16px;
+    flex-shrink: 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .info-content {
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 66px);
+  }
+  
+  .info-text {
+    flex: 1;
+  }
+  
+  .info-text p {
+    color: var(--text-primary);
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 12px;
+  }
+  
+  .bitcoin-features {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 16px;
+  }
+  
+  .bitcoin-features span {
+    background-color: var(--panel-bg);
+    color: var(--text-primary);
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 13px;
+  }
+    
+    .bitcoin-logo {
+      margin-bottom: 0;
+    }
+  

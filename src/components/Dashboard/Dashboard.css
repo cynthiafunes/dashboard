@@ -1,14 +1,14 @@
 .dashboard {
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  gap: 5px;
 }
 
 .dashboard-grid {
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: 15px;
-  min-height: 400px;
+  min-height: auto;
 }
 
 .main-chart, .side-panel {
@@ -16,7 +16,7 @@
   border-radius: 8px;
   padding: 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  height: 100%;
+  height: auto;
   position: relative;
   overflow: hidden;
 }

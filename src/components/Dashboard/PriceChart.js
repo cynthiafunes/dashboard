@@ -182,7 +182,14 @@ const PriceChart = () => {
   return (
     <div className="price-chart-container">
       <div className="chart-header">
-        <h2>Bitcoin Price History & Forecast</h2>
+        <div className="chart-title-container">
+          <div className="chart-icon">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+            </svg>
+          </div>
+          <h2>Bitcoin Price History & Forecast</h2>
+        </div>
         {error && <p className="error-message">{error}</p>}
         <div className="chart-controls">
           <div className="toggle-controls">
@@ -190,26 +197,30 @@ const PriceChart = () => {
               className={`control-btn ${logScale ? 'active' : ''}`} 
               onClick={() => setLogScale(!logScale)}
             >
-              Log Scale
+              <span className="btn-icon">📊</span>
+              <span>Log Scale</span>
             </button>
             <button 
               className={`control-btn ${showPowerLaw ? 'active' : ''}`} 
               onClick={() => setShowPowerLaw(!showPowerLaw)}
             >
-              Power Law
+              <span className="btn-icon">📈</span>
+              <span>Power Law</span>
             </button>
             <button 
               className={`control-btn ${showForecast ? 'active' : ''}`} 
               onClick={toggleForecast}
             >
-              Forecast
+              <span className="btn-icon">🔮</span>
+              <span>Forecast</span>
             </button>
             {showForecast && (
               <button 
                 className={`control-btn ${confidenceInterval ? 'active' : ''}`} 
                 onClick={() => setConfidenceInterval(!confidenceInterval)}
               >
-                Confidence Range
+                <span className="btn-icon">📏</span>
+                <span>Confidence Range</span>
               </button>
             )}
           </div>
@@ -261,21 +272,41 @@ const PriceChart = () => {
       </div>
       <div className="chart-container">
         {isLoading ? (
-          <div className="loading-indicator">Loading price data...</div>
+          <div className="loading-indicator">
+            <div className="spinner"></div>
+            <span>Loading price data...</span>
+          </div>
         ) : (
           <ResponsiveContainer width="100%" height={300}>
             <LineChart
               data={getFilteredData()}
               margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
             >
+              <defs>
+                <linearGradient id="colorPrice" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="5%" stopColor="#f7931a" stopOpacity={0.8}/>
+                  <stop offset="95%" stopColor="#f7931a" stopOpacity={0}/>
+                </linearGradient>
+                <linearGradient id="colorForecast" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="5%" stopColor="#2ecc71" stopOpacity={0.8}/>
+                  <stop offset="95%" stopColor="#2ecc71" stopOpacity={0}/>
+                </linearGradient>
+              </defs>
               <CartesianGrid strokeDasharray="3 3" stroke="#2a3a5a" />
-              <XAxis dataKey="date" stroke="#8899aa" />
+              <XAxis 
+                dataKey="date" 
+                stroke="#8899aa" 
+                tick={{ fill: '#8899aa' }}
+                tickLine={{ stroke: '#8899aa' }}
+              />
               <YAxis 
                 stroke="#8899aa" 
                 scale={logScale ? 'log' : 'auto'}
                 domain={logScale ? ['auto', 'auto'] : [0, 'auto']}
                 tickFormatter={(value) => `$${value}`}
                 width={60}
+                tick={{ fill: '#8899aa' }}
+                tickLine={{ stroke: '#8899aa' }}
               />
               <Tooltip content={<CustomTooltip />} />
               <Legend wrapperStyle={{ paddingTop: '10px' }} />
@@ -287,9 +318,12 @@ const PriceChart = () => {
                 dataKey="price"
                 stroke="#f7931a"
                 strokeWidth={3}
-                dot={{ r: 3 }}
-                activeDot={{ r: 8 }}
+                dot={{ r: 3, fill: '#f7931a', stroke: '#ffffff', strokeWidth: 1 }}
+                activeDot={{ r: 8, fill: '#f7931a', stroke: '#ffffff', strokeWidth: 2 }}
                 connectNulls={true}
+                isAnimationActive={true}
+                animationDuration={1000}
+                animationEasing="ease-in-out"
               />
               
               {/* Power Law Model Line */}
@@ -302,6 +336,10 @@ const PriceChart = () => {
                   strokeWidth={2}
                   strokeDasharray="5 5"
                   dot={false}
+                  isAnimationActive={true}
+                  animationDuration={1000}
+                  animationDelay={300}
+                  animationEasing="ease-in-out"
                 />
               )}
               
@@ -313,8 +351,12 @@ const PriceChart = () => {
                   dataKey="forecast"
                   stroke="#2ecc71"
                   strokeWidth={2}
-                  dot={{ r: 3 }}
+                  dot={{ r: 3, fill: '#2ecc71', stroke: '#ffffff', strokeWidth: 1 }}
                   connectNulls={true}
+                  isAnimationActive={true}
+                  animationDuration={1000}
+                  animationDelay={600}
+                  animationEasing="ease-in-out"
                 />
               )}
               
@@ -329,6 +371,9 @@ const PriceChart = () => {
                   strokeOpacity={0.3}
                   dot={false}
                   activeDot={false}
+                  isAnimationActive={true}
+                  animationDuration={1000}
+                  animationDelay={900}
                 />
               )}
               
@@ -343,6 +388,9 @@ const PriceChart = () => {
                   strokeOpacity={0.3}
                   dot={false}
                   activeDot={false}
+                  isAnimationActive={true}
+                  animationDuration={1000}
+                  animationDelay={900}
                 />
               )}
               
@@ -352,6 +400,12 @@ const PriceChart = () => {
                   x={new Date().getFullYear().toString()}
                   stroke="#e67e22"
                   strokeDasharray="3 3"
+                  label={{
+                    value: "Current",
+                    position: "insideTopRight",
+                    fill: "#e67e22",
+                    fontSize: 12
+                  }}
                 />
               )}
             </LineChart>

@@ -8,53 +8,158 @@
   background-color: var(--secondary-bg);
   border-radius: 8px;
   padding: 16px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
   height: 100%;
   min-height: 120px;
   display: flex;
   flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.metric-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.metric-card-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.metric-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: rgba(247, 147, 26, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 12px;
+  font-size: 18px;
+}
+
+.security-icon {
+  background-color: rgba(46, 204, 113, 0.1);
+}
+
+.power-law-icon {
+  background-color: rgba(52, 152, 219, 0.1);
 }
 
 .metric-card h3 {
   font-size: 16px;
-  margin-top: 0;
-  margin-bottom: 16px;
+  margin: 0;
   color: var(--text-primary);
+  font-weight: 600;
+}
+
+.supply-card {
+  border-left: 4px solid var(--bitcoin-blue);
 }
 
 .supply-bar {
-  height: 20px;
+  height: 8px;
   background-color: var(--panel-bg);
-  border-radius: 3px;
+  border-radius: 4px;
   overflow: hidden;
-  margin-bottom: 12px;
+  margin: 5px 0 12px;
+  position: relative;
 }
 
 .supply-progress {
   height: 100%;
   background-color: var(--bitcoin-blue);
-  border-radius: 3px;
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+}
+
+.progress-shine {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: skewX(-20deg);
+  animation: shine 2s infinite;
+}
+
+@keyframes shine {
+  0% { transform: translateX(-100%) skewX(-20deg); }
+  100% { transform: translateX(300%) skewX(-20deg); }
+}
+
+.supply-values {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.current-value, .total-value {
+  display: flex;
+  flex-direction: column;
 }
 
 .metric-value {
-  font-size: 14px;
+  font-size: 18px;
   font-weight: bold;
   color: var(--text-primary);
-  margin-bottom: 4px;
 }
 
-.metric-subtext {
+.metric-label {
   font-size: 12px;
   color: var(--text-secondary);
+}
+
+.metric-status {
+  background-color: var(--panel-bg);
+  padding: 6px 8px;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 13px;
+  color: var(--text-primary);
+  margin-top: auto;
+}
+
+.security-card {
+  border-left: 4px solid #2ecc71;
 }
 
 .security-chart {
   margin-bottom: 10px;
   height: 60px;
+  background-color: rgba(46, 204, 113, 0.05);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.hashrate-container {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-grow: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: auto;
+  background-color: var(--panel-bg);
+  padding: 8px 12px;
+  border-radius: 4px;
+}
+
+.hashrate-value {
+  font-weight: bold;
+  color: #2ecc71;
+  font-size: 15px;
+}
+
+.hashrate-label {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.power-law-card {
+  border-left: 4px solid var(--bitcoin-orange);
 }
 
 .power-law-text {
@@ -64,19 +169,20 @@
   margin-bottom: 12px;
 }
 
-.interactive-demo {
+.power-law-concepts {
   display: flex;
-  align-items: center;
-  font-size: 12px;
-  color: var(--text-primary);
-  cursor: pointer;
+  gap: 8px;
+  flex-wrap: wrap;
   margin-top: auto;
 }
 
-.demo-icon {
+.power-law-concepts span {
+  background-color: var(--panel-bg);
   color: var(--bitcoin-orange);
-  font-size: 24px;
-  margin-right: 8px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
 }
 
 @media (max-width: 992px) {
